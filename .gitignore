@@ -6,6 +6,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+# Ignore .NET build artifacts
+Backend/bin/
+Backend/obj/
+
+# Ignore local configuration files containing secrets
+Backend/appsettings.Development.json
+Backend/appsettings.Local.json
+
 
 node_modules
 dist

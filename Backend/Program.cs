@@ -8,14 +8,22 @@ using Microsoft.AspNetCore.SignalR;
 
 
 ThreadPool.SetMinThreads(workerThreads: 50, completionPortThreads: 50);
+
+var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration
+    .SetBasePath(AppContext.BaseDirectory)
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{env}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
 
 // Add services to the container.
 
 var supabaseUrl = builder.Configuration["Supabase:Url"];
 var supabaseKey = builder.Configuration["Supabase:Key"];
-var backblazeKeyId = "005866c31d407550000000004";
-var backblazeApplicationKey = "K005IIkGi3YChX4WBlidLsIfcXZU7fA";
+var backblazeKeyId = builder.Configuration["BackblazeB2:KeyId"];
+var backblazeApplicationKey = builder.Configuration["BackblazeB2:ApplicationKey"];
 // var backblazeEndpoint = "https://s3.us-east-005.backblazeb2.com";
 // var backblazeBucketName = "Pulseit";
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;

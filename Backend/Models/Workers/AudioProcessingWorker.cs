@@ -81,11 +81,16 @@ public class AudioProcessingWorker
             _logger.LogInformation($"[Worker Step 1]: Fetching {filekey} from Backblaze B2 and saving in tempinputfile...");
 
 
-            string keyId ="005866c31d407550000000004";
-            string appKey = "K005IIkGi3YChX4WBlidLsIfcXZU7fA";
-            string endpoint = "https://s3.us-east-005.backblazeb2.com";
-            string bucketName = "Pulseit";
+            // string keyId ="005866c31d407550000000004";
+            // string appKey = "K005IIkGi3YChX4WBlidLsIfcXZU7fA";
+            // string endpoint = "https://s3.us-east-005.backblazeb2.com";
+            // string bucketName = "Pulseit";
 
+
+string keyId = _config["BackblazeB2:KeyId"] ?? throw new ArgumentNullException(nameof(_config), "Backblaze KeyId is missing.");
+string appKey = _config["BackblazeB2:ApplicationKey"] ?? throw new ArgumentNullException(nameof(_config), "Backblaze AppKey is missing.");
+string endpoint = _config["BackblazeB2:Endpoint"] ?? throw new ArgumentNullException(nameof(_config), "Backblaze Endpoint is missing.");
+string bucketName = _config["BackblazeB2:BucketName"] ?? throw new ArgumentNullException(nameof(_config), "Backblaze BucketName is missing.");
 
 
             var s3Config = new AmazonS3Config { ServiceURL = endpoint };

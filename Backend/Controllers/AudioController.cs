@@ -256,7 +256,7 @@ var requestPayload = new
 }// Forces structured JSON returns
 };
 
-string geminiApiKey = "AIzaSyCgqyt9QI8mKEX7GR0Wgvq5fJfS9RQifhQ";
+string geminiApiKey = _configuration["Gemini:ApiKey"] ?? throw new ArgumentNullException(nameof(_configuration), "Gemini API Key is missing.");
 string model = "gemini-3.1-flash-lite";
 string geminiUrl = $"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={geminiApiKey}";
 
