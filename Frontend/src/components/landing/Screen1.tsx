@@ -22,16 +22,15 @@ export default function Screen1({ isActive, onStart }: Screen1Props) {
         >
           Voice notes, made useful
         </p>
-
-        <h1
-          className="text-[clamp(2.5rem,8vw,10rem)] font-black leading-[0.95] tracking-[-0.05em] sm:leading-[0.85] sm:tracking-[-0.08em]"
-          style={{ color: colors.text.primary }}
-        >
-          Turn audio into
-          <span className="mt-1 block" style={{ color: colors.text.secondary }}>
-            forward motion.
-          </span>
-        </h1>
+<h1
+  className="text-[clamp(3.2rem,11vw,4.5rem)] font-black leading-[0.88] tracking-[-0.05em] sm:text-[clamp(4.5rem,8vw,7rem)] sm:leading-[0.85] lg:text-[clamp(6rem,7vw,9.5rem)] lg:leading-[0.82] lg:tracking-[-0.08em]"
+  style={{ color: colors.text.primary }}
+>
+  Turn audio into
+  <span className="mt-1 block" style={{ color: colors.text.secondary }}>
+    forward motion.
+  </span>
+</h1>
 
         <p
           className="mx-auto mt-6 max-w-[600px] text-[clamp(0.95rem,2.5vw,1.25rem)] leading-relaxed tracking-wide sm:mt-8"
