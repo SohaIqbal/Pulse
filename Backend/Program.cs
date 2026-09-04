@@ -99,7 +99,7 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 app.MapHangfireDashboard("/hangfire");
-app.MapHub<PipelineHub>("/pipelineHub");
+app.MapHub<PipelineHub>("/api/pipelineHub");
 
 app.MapControllers();
 
