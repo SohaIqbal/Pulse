@@ -21,7 +21,7 @@ export default function HeroSection() {
       style={{ backgroundColor: colors.background.primary, color: colors.text.primary }}
     >
       <div className="mx-auto flex min-h-screen max-w-[1600px] flex-col px-4 py-5 sm:px-6 lg:px-8">
-        <header className="flex items-center justify-between">
+        <header className="flex items-center justify-between pt-[max(1.25rem,env(safe-area-inset-top))] sm:pt-5">
           <Brand title="Pulse." />
         </header>
 
