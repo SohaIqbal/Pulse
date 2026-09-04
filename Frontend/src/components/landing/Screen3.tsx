@@ -81,7 +81,7 @@ export default function Screen3({ isActive, onStartOver }: Screen3Props) {
     if (!isActive || !audioId) return;
 
     const connection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5252/pipelineHub')
+      .withUrl('/api/pipelineHub')
       .withAutomaticReconnect()
       .build();
 
