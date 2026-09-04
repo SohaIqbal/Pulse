@@ -540,7 +540,7 @@ return (
                 <input
                   ref={inputRef}
                   type="file"
-                  accept="audio/*"
+                  accept="audio/*,.m4a,.mp3,.wav,.ogg,.aac,.flac,.caf,.amr"
                   className="hidden"
                   onChange={(event) => handleFile(event.target.files?.[0] ?? null)}
                 />
