@@ -28,3 +28,28 @@ body,
 button {
   font: inherit;
 }
+/* Custom Dark Theme Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e1116; /* Matches card background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); /* Sleek muted gray */
+  border-radius: 9999px;
+  border: 2px solid #0e1116; /* Adds padding around the scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dfe945; /* Glows with your accent color on hover */
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) #0e1116;
+}
